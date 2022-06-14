@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ayush-test-application
+spec:
+  destination:
+    name: 'default'
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: argocd/getting-started
+    repoURL: 'https://gitlab.com/ayush-sharma/example-assets.git'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
