@@ -4,11 +4,11 @@ metadata:
   name: lcantelli-test-application
 spec:
   destination:
-    name: 'default'
+    name: 'nginx-deployment'
     namespace: default
     server: 'https://kubernetes.default.svc'
   source:
-    path: argocd/getting-started
+    path: /
     repoURL: 'https://github.com/lcantelli/poc-argocd.git'
     targetRevision: HEAD
   project: default
